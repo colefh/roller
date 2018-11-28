@@ -72,8 +72,8 @@ check_lengths <- function(sides, prob) {
 #' @export
 print.device <- function(x, ...) {
   cat('object "device"\n\n')
-  for (i in range(length(x$sides))) {
-    cat(sprintf('"%s", p = %s', x$sides[1], x$prob[1]), "\n")
+  for (i in 1:length(x$sides)) {
+    cat(sprintf('"%s", p = %s', x$sides[i], x$prob[i]), "\n")
   }
   invisible(x)
 }

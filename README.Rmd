@@ -1,10 +1,7 @@
 ---
-title: "Habits"
-author: John Doe
-date: March 22, 2005
 output:
-  md_document:
-    variant: markdown_github
+  github_document:
+    html_preview: false
 ---
 
 ```{r, echo = FALSE}
@@ -45,16 +42,17 @@ Install the development version from GitHub via the package `"devtools"`:
 # install "roller" (without vignettes)
 #devtools::install_github("stat133-f18/hw-stat133-colefh/workout3/roller")
 # install "roller" (with vignettes)
-#devtools::install_github("colefh/Workout3/roller", build_vignettes = TRUE)
+devtools::install_github("colefh/roller", build_vignettes = TRUE)
 ```
 
 
 ## Usage
 
-```{r}
+```{r, echo = TRUE}
+#install.packages("roller")
 library(roller)
 # default die
-device1 <- device()
+device1 <- device(sides = 1:6, prob = rep(1/6,6))
 device1
 
 # 1 roll of device1
@@ -80,12 +78,12 @@ plot(roll100)
 roll100[100]
 
 # change
-roll100[100] <- 1
+roll100[100]<- 1
 roll100[100]
-roll100[100] <- 2
+roll100[100]<- 2
 roll100[100]
 
-# add
+# add (+)
 roll200 <- roll100 + 100
 roll200
 
