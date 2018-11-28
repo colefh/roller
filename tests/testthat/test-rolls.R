@@ -1,3 +1,5 @@
+context("Testing the Rolls constructor and all functions.")
+
 fair_die <- device()
 set.seed(123)
 fair50 <- roll(fair_die, times = 50)

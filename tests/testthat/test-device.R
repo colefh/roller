@@ -1,3 +1,4 @@
+context("Testing the Device constructor and functions.")
 library(testthat)
 fair <- device()
 
