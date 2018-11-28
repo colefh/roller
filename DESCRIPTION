@@ -1,0 +1,17 @@
+Package: roller
+Type: Package
+Title: Rolls a die
+Version: 0.1.0
+Author: Cole Fang-Horvath
+Maintainer: Cole Fang-Horvath <colefh@berkeley.edu>
+Description: This is a package that deals with rolling die and outputting descriptions of 
+    the rolls. It includes a device object (the die to be rolled), and a rolls object
+    Which is the outcome rolls.
+License: GPL-2 
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

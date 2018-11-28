@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543249887513.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2882197468",
+    "id" : "D3379B21",
+    "lastKnownWriteTime" : 1543355396,
+    "last_content_update" : 1543355396268,
+    "path" : "~/stat133/hw-stat133/Workout3/roller/R/device.R",
+    "project_path" : "R/device.R",
+    "properties" : {
+        "cursorPosition" : "61,41",
+        "scrollLine" : "46",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

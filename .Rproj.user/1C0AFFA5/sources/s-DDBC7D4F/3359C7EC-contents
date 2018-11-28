@@ -1,0 +1,76 @@
+---
+title: "Introduction to Package Roller"
+author: "Cole Fang-Horvath"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to Package Roller}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(roller)
+```
+
+## Dice Rolling
+
+The package `"roller"` is a very simple implementation of rolling a multi-sided dice with certain sides and probabilities, and visualizing the outcomes in multiple ways including plots and tables of the frequencies of each side rolled.
+
+## Creating a Device
+
+The first step in rolling a dice is creating the dice (or device) to be rolled. We need to create a `"device"` object using the function `device()`.
+
+```{r}
+my_device <- device()
+my_device
+```
+
+By default, the `device()` function creates a fair, 2 sided object with sides 1 and 2 and probabilites 50% each. You can change the defaults with input arguments `sides` and `prob`.
+
+```{r}
+fair_six_sided <- device(sides = 1:6, prob = rep(1/6, 6))
+fair_six_sided
+loaded_four_sided <- device(sides = 1:4, prob = c(0.7,0.1,0.1,0.1))
+loaded_four_sided
+```
+
+## Rolling a Device/Dice
+
+Once we've created our device, we can use the `roll()` function to roll the device. We control which device we roll and how many times we roll it with the inputs `device` and `times` respectively. This function will output a list of 4 elements: rolls (the roll outputs), sides (the sides of `device`), prob (the probabilities for each side of `device`), and total (the total number of rolls, e.g. `times`).
+
+```{r}
+rolled200 <- roll(device(sides = 1:6, prob = rep(1/6.6)), 200)
+rolled200
+```
+
+The `summary()` function returns a list containing a data frame of the counts and frequencies of each side rolled.
+```{r}
+summary200 <- summary(rolled200)
+summary200
+```
+
+The `plot()` method yields a barchart of the proportions of each side rolled.
+```{r}
+plot(rolled200)
+```
+
+The `"["` (extraction) method allows us to examine individual rolls.
+```{r}
+rolled200[150]
+```
+
+The `"[<-" method allows us to replace the value of a given roll.
+```{r}
+rolled200[150] <- 5
+rolled200[150]
+rolled200[150] <- 1
+rolled200[150]
+```
+
+the `"+"` method allows us to add rolls to an already rolled object.
+```{r}
+rolled300 <- rolled200 + 100
+summary(rolled300)
+```

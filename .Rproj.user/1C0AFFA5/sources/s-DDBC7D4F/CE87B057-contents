@@ -1,0 +1,66 @@
+---
+output:
+  github_document:
+    html_preview: false
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+
+## Overview
+
+`"roller"` is an [R](http://www.r-project.org/) package 
+that is used to simulate rolling a die/device.
+
+* `device()` creates a device object (of class `"device"`)
+* `roll()` tosses a device object, producing a `"roll"` object.
+* `summary()` method for a `roll` object provides a frequency table for the rolls.
+* `plot()` method for a `"roll"` object to plot frequencies of heads.
+
+
+## Motivation
+
+This package was developed for homework, and to learn how to truly develop and R package.
+
+
+## Installation
+
+Install the development version from GitHub via the package `"devtools"`:
+
+```r
+# development version from GitHub:
+#install.packages("devtools") 
+# install "roller" (without vignettes)
+devtools::install_github("colefh/roller")
+# install "roller" (with vignettes)
+devtools::install_github("colefh/roller", build_vignettes = TRUE)
+```
+
+
+## Usage
+
+```{r}
+library(roller)
+# default device
+device1 <- device()
+device1
+# 1 roll of device1
+roll(device1, 1)
+# 100 rolls of device1
+roll100 <- roll(device1, times = 100)
+roll100
+# summary
+summary(roll100)
+# plot
+plot(roll100)
+# extract
+roll100[100]
+# replace
+roll100[100] <- 1
+```

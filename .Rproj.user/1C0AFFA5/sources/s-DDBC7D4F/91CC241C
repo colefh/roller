@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543266377471.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "91CC241C",
+    "lastKnownWriteTime" : 1543362543,
+    "last_content_update" : 1543362543272,
+    "path" : "~/stat133/hw-stat133/Workout3/roller/R/rolls.R",
+    "project_path" : "R/rolls.R",
+    "properties" : {
+        "cursorPosition" : "124,57",
+        "scrollLine" : "89",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

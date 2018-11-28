@@ -1,0 +1,15 @@
+"0","# development version from GitHub:
+#install.packages(""devtools"") 
+# install ""roller"" (without vignettes)
+#devtools::install_github(""stat133-f18/hw-stat133-colefh/workout3/roller"")
+# install ""roller"" (with vignettes)
+devtools::install_github(""colefh/Workout3/roller"", build_vignettes = TRUE)
+"
+"2","Error: HTTP error 404.
+  Not Found
+
+  Rate limit remaining: 47/60
+  Rate limit reset at: 2018-11-28 19:54:49 UTC
+
+  
+"

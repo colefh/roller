@@ -1,0 +1,94 @@
+---
+title: "Habits"
+author: John Doe
+date: March 22, 2005
+output:
+  md_document:
+    variant: markdown_github
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+
+## Overview
+
+`"roller"` is an [R](http://www.r-project.org/) package 
+that allows us to simulate rolling a die/device.
+
+* `device()` creates a dice object (of class `"device"`)
+* `roll()` rolls a device object, yielding a `rolls` object.
+* `plot()` method for a `"rolls"` object to plot frequencies of each side rolled.
+* `summary()` method for a `"rolls"` object gives a frequency table of the sides rolled.
+* `"["` extract method for a `"rolls"` object extracts the element at the nth roll.
+* `"[<-"` method allows us to change certain rolls outcomes.
+* `"+"` method adds rolls to an already-rolled rolls object.
+
+
+## Motivation
+
+This package has been created to satisfy a homework problem, and also to learn the tools necessary to create a fully functional R package.
+
+
+## Installation
+
+Install the development version from GitHub via the package `"devtools"`:
+
+```{r}
+# development version from GitHub:
+#install.packages("devtools") 
+# install "roller" (without vignettes)
+#devtools::install_github("stat133-f18/hw-stat133-colefh/workout3/roller")
+# install "roller" (with vignettes)
+#devtools::install_github("colefh/Workout3/roller", build_vignettes = TRUE)
+```
+
+
+## Usage
+
+```{r}
+library(roller)
+# default die
+device1 <- device()
+device1
+
+# 1 roll of device1
+roll(device1, times = 1)
+
+# 10 rolls of device1
+roll10 <- roll(device1, times = 10)
+roll10
+
+# summary
+summary(roll10)
+
+# 100 rolls
+roll100 <- roll(device1, times = 100)
+
+# summary
+summary(roll100)
+
+# plot
+plot(roll100)
+
+# extract
+roll100[100]
+
+# change
+roll100[100] <- 1
+roll100[100]
+roll100[100] <- 2
+roll100[100]
+
+# add
+roll200 <- roll100 + 100
+roll200
+
+# summary
+summary(roll200)
+```
